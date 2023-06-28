@@ -1,0 +1,29 @@
+<div class="form">
+  <form class="form-elements" formGroup="form">
+    <h1 style="text-align: center">Add Income</h1>
+    <span class="p-float-label">
+      <p-dropdown id="category" [options]="categories" placeholder="Select a Category" optionLabel="category"></p-dropdown>
+      <label for="category">Category</label>
+    </span>
+    <br>
+    <span class="p-float-label">
+      <input class="p-inputtext-lg" pInputText pKeyFilter="int" id="userId"/>
+      <label for="userId">User Id</label>
+    </span>
+    <br>
+    <span class="p-float-label">
+      <input class="p-inputtext-lg" pInputText pKeyFilter="int" id="amount"/>
+      <label for="amount">Amount</label>
+    </span>
+    <br>
+    <span class="p-float-label">
+      <textarea id="description" rows="5" cols="30" pInputTextarea></textarea>
+      <label for="description">Description</label>
+    </span>
+    <span style="margin-top: 10px">
+      <button pButton pRipple label="Submit" class="p-button-success" style="margin-right: 10px"></button>
+      <button type="reset" pButton pRipple label="Reset" class="p-button-danger" style="margin-left: 10px"></button>
+    </span>
+  </form>
+  <div></div>
+</div>
