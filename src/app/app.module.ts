@@ -8,6 +8,8 @@ import {DefaultModule} from "./layouts/default/default.module";
 import { VisualsComponent } from './modules/visuals/visuals.component';
 import {CardModule} from "primeng/card";
 import {MessageService} from "primeng/api";
+import {DataService} from "./shared/services/dataService";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import {MessageService} from "primeng/api";
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    CardModule
+    CardModule,
+    HttpClientModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

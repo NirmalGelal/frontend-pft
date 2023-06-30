@@ -1,10 +1,10 @@
 .form{
   display:flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding: 20px;
+  justify-content: space-between;
+  //align-items: center;
+  //margin-top: 20px;
+  padding: 15px;
   background-color: #f8f9fa;
 }
 .p-float-label{
@@ -13,6 +13,11 @@
 .form-elements{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
+  align-items: start;
+}
+.button-group{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

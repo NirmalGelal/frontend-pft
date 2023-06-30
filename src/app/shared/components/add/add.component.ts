@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IncomeEnums} from "../../interfaces/incomeEnums";
+import {DataService} from "../../services/dataService";
+import {FormatDatePipe} from "../../pipes/format-date.pipe";
 
 @Component({
   selector: 'app-add',
@@ -8,10 +10,29 @@ import {IncomeEnums} from "../../interfaces/incomeEnums";
 })
 export class AddComponent implements OnInit{
   categories: IncomeEnums[] | undefined;
+  incomeList: any[] = [];
+  constructor(private service:DataService) {
+  }
   ngOnInit() {
     this.categories = [
-      {category: 'GOAL'},
-      {category: 'TEST'},
+      {category: 'SALARY'},
+      {category: 'INVESTMENT'},
+      {category: 'FREELANCING'},
+      {category: 'RENT'},
+      {category: 'BUSINESS_INCOME'},
+      {category: 'PENSION'},
+      {category: 'COMMISSION'},
+      {category: 'OTHER'},
     ];
+    this.service.getIncomes().subscribe({
+      next: response => {
+        this.incomeList = response.data;
+      },
+      error: (responseError) => {
+        console.log(responseError);
+      }
+    }
+    );
   }
+
 }

@@ -21,6 +21,9 @@ import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {DropdownModule} from "primeng/dropdown";
+import {MatCardModule} from "@angular/material/card";
+import {TableModule} from "primeng/table";
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
 
 
@@ -30,6 +33,7 @@ import {DropdownModule} from "primeng/dropdown";
     SidebarComponent,
     FooterComponent,
     AddComponent,
+    FormatDatePipe,
   ],
   imports: [
     CommonModule,
@@ -49,7 +53,9 @@ import {DropdownModule} from "primeng/dropdown";
     ButtonModule,
     RippleModule,
     InputTextareaModule,
-    DropdownModule
+    DropdownModule,
+    MatCardModule,
+    TableModule
   ],
   exports: [
     HeaderComponent,
