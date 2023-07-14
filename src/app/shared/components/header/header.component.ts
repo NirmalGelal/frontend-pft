@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {MessageService} from "primeng/api";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,18 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class HeaderComponent {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter<any>();
-  toggleSideBar(){
+
+  constructor(private messageService: MessageService,
+              private router:Router) {
+  }
+
+  toggleSideBar() {
     this.toggleSideBarForMe.emit();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.messageService.add({key:"msg",severity: 'success', summary:'Success', detail:'Logged out successfully'});
+    this.router.navigate(['']);
   }
 }

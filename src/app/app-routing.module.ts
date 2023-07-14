@@ -5,23 +5,28 @@ import {DashboardComponent} from "./modules/dashboard/dashboard.component";
 import {PostsComponent} from "./modules/posts/posts.component";
 import {VisualsComponent} from "./modules/visuals/visuals.component";
 import {AddComponent} from "./shared/components/add/add.component";
+import {LoginComponent} from "./layouts/login/login.component";
 
 const routes: Routes = [
   {
     path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'home',
     component: DefaultComponent,
     children:[
       {
         path: '',
-        component: DashboardComponent
+        component: VisualsComponent
       },
       {
         path: 'posts',
         component: PostsComponent
       },
       {
-        path: 'visuals',
-        component: VisualsComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
         path: 'add',

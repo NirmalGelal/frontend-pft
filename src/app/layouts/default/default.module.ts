@@ -11,6 +11,7 @@ import {PasswordModule} from "primeng/password";
 import {CheckboxModule} from "primeng/checkbox";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -18,16 +19,17 @@ import {CardModule} from "primeng/card";
     DashboardComponent,
     PostsComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    SharedModule,
-    MatSidenavModule,
-    ReactiveFormsModule,
-    PasswordModule,
-    CheckboxModule,
-    ButtonModule,
-    CardModule
-  ]
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        SharedModule,
+        MatSidenavModule,
+        ReactiveFormsModule,
+        PasswordModule,
+        CheckboxModule,
+        ButtonModule,
+        CardModule,
+        ToastModule
+    ]
 })
 export class DefaultModule { }

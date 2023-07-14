@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IncomeEnums} from "../../interfaces/incomeEnums";
 import {DataService} from "../../services/dataService";
-import {FormatDatePipe} from "../../pipes/format-date.pipe";
 
 @Component({
   selector: 'app-add',
