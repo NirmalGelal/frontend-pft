@@ -21,6 +21,6 @@ export class HeaderComponent {
   logout() {
     localStorage.clear();
     this.messageService.add({key:"msg",severity: 'success', summary:'Success', detail:'Logged out successfully'});
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   }
 }

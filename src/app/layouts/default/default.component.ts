@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../../shared/services/dataService";
-import {User} from "../../shared/interfaces/user";
 
 @Component({
   selector: 'app-default',
@@ -9,9 +7,7 @@ import {User} from "../../shared/interfaces/user";
 })
 export class DefaultComponent implements OnInit{
   sideBarOpen = true;
-
-  user?:User;
-  constructor(private dataService:DataService) {
+  constructor() {
 
   }
   ngOnInit() {

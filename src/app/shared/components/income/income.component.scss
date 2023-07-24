@@ -1,19 +1,15 @@
 .form{
+  width: 100%;
   display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  //align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   //margin-top: 20px;
   padding: 15px;
   background-color: #f8f9fa;
 }
 .p-float-label{
   margin-bottom: 5px;
-}
-.form-elements{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
 }
 .button-group{
   margin-top: 10px;

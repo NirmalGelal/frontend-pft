@@ -13,7 +13,6 @@ import {MatListModule} from "@angular/material/list";
 import {RouterModule} from "@angular/router";
 import {PanelMenuModule} from "primeng/panelmenu";
 import {MessageModule} from "primeng/message";
-import {AddComponent} from "./components/add/add.component";
 import {FormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {KeyFilterModule} from "primeng/keyfilter";
@@ -24,16 +23,18 @@ import {DropdownModule} from "primeng/dropdown";
 import {MatCardModule} from "@angular/material/card";
 import {TableModule} from "primeng/table";
 import { FormatDatePipe } from './pipes/format-date.pipe';
-
-
+import { IncomeComponent } from './components/income/income.component';
+import { AddIncomeComponent } from './components/add-income/add-income.component';
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    AddComponent,
     FormatDatePipe,
+    IncomeComponent,
+    AddIncomeComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +56,8 @@ import { FormatDatePipe } from './pipes/format-date.pipe';
     InputTextareaModule,
     DropdownModule,
     MatCardModule,
-    TableModule
+    TableModule,
+    ConfirmDialogModule
   ],
   exports: [
     HeaderComponent,

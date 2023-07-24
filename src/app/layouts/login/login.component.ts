@@ -36,7 +36,7 @@ export class LoginComponent {
         localStorage.setItem("access_token", this.tokens.accessToken);
         localStorage.setItem("refresh_token", this.tokens.refreshToken);
         this.messageService.add({key:"msg", severity: 'success', summary: 'Success', detail: 'Logged in successfully' });
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
       }
     },error => {
         this.messageService.add({key:"msg", severity: 'error', summary: 'Error', detail: 'Invalid credentials' });

@@ -13,4 +13,9 @@ export class AuthService {
     return this.http.post(API_BASE_URL+'/auth/signin',{email,password});
   }
 
+  checkIfLoggedIn(){
+    return !!localStorage.getItem('access_token');
+  }
+
+
 }

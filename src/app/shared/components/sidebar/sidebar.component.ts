@@ -31,94 +31,23 @@ export class SidebarComponent implements OnInit{
       {
         label: 'Incomes',
         icon: 'pi pi-fw pi-dollar',
-        items: [
-          {
-            label: 'Add',
-            icon: 'pi pi-fw pi-plus-circle',
-            routerLink: ['/add']
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-file-edit'
-          }
-
-        ]
+        routerLink: ['/income']
       },
       {
         label: 'Expenses',
-        icon: 'pi pi-fw pi-wallet',
-        items: [
-          {
-            label: 'Add',
-            icon: 'pi pi-fw pi-plus-circle',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-file-edit'
-          }
-        ]
+        icon: 'pi pi-fw pi-wallet'
       },
       {
         label: 'Goal',
         icon: 'pi pi-fw pi-money-bill',
-        items: [
-          {
-            label: 'Add',
-            icon: 'pi pi-fw pi-plus',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-file-edit'
-          }
-        ]
       },
       {
         label: 'Recurring Bills',
         icon: 'pi pi-fw pi-money-bill',
-        items: [
-          {
-            label: 'Add',
-            icon: 'pi pi-fw pi-plus',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-file-edit'
-          }
-        ]
       },
       {
         label: 'Budget Limits',
         icon: 'pi pi-fw pi-stop-circle',
-        items: [
-          {
-            label: 'Add',
-            icon: 'pi pi-fw pi-plus',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-file-edit'
-          }
-        ]
       }
     ];
     this.user = this.getUser(this.username);
@@ -147,7 +76,7 @@ export class SidebarComponent implements OnInit{
       .subscribe(
         {
           next:( response) => {
-            console.log(response)
+            // console.log(response)
             // return response.data;
             this.user = response.data;
           },
