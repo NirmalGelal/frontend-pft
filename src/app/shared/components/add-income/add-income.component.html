@@ -1,11 +1,11 @@
 <mat-card>
   <h1 style="text-align: center">Add Income</h1>
   <mat-card-content>
-    <form class="form-elements" formGroup="form">
+    <form  #myForm="ngForm" (ngSubmit)="submitForm(myForm)" class="form-elements">
 
       <span class="p-float-label p-input-icon-left">
       <i class="pi pi-th-large"></i>
-      <p-dropdown id="category" [filter]="true" [options]="categories" placeholder="Select a Category" optionLabel="category"></p-dropdown>
+      <p-dropdown id="category" [filter]="true" [options]="categories" optionValue="category" [(ngModel)]="formData.category" name="category1" placeholder="Select a Category" optionLabel="category"></p-dropdown>
       <label for="category">Category</label>
       </span>
 
@@ -13,7 +13,7 @@
       <br>
       <span class="p-float-label p-input-icon-left">
       <i class="pi pi-dollar"></i>
-      <input class="p-inputtext" pInputText pKeyFilter="int" id="amount"/>
+      <input class="p-inputtext" pInputText [(ngModel)]="formData.amount" name="amount" type="number" id="amount" required="true"/>
       <label for="amount">Amount</label>
       </span>
 
@@ -21,14 +21,14 @@
       <br>
 
       <span class="p-float-label">
-      <textarea id="description" style="width: 100%;" pInputTextarea></textarea>
+      <textarea id="description" style="width: 100%;" [(ngModel)]="formData.description" name="description" pInputTextarea required></textarea>
       <label for="description">Description</label>
       </span>
 
       <br>
 
       <span class="button-group">
-      <button pButton pRipple label="Submit" class="p-button-success" style="margin-right: 10px"></button>
+      <button pButton pRipple type="submit" label="Submit" class="p-button-success" style="margin-right: 10px"></button>
       <button type="reset" pButton pRipple label="Reset" class="p-button-danger" style="margin-left: 10px"></button>
     </span>
     </form>

@@ -13,7 +13,7 @@ import {MatListModule} from "@angular/material/list";
 import {RouterModule} from "@angular/router";
 import {PanelMenuModule} from "primeng/panelmenu";
 import {MessageModule} from "primeng/message";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {KeyFilterModule} from "primeng/keyfilter";
 import {ButtonModule} from "primeng/button";
@@ -57,7 +57,8 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     DropdownModule,
     MatCardModule,
     TableModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,

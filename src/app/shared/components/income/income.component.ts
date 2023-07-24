@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 export class IncomeComponent implements OnInit{
   ref: DynamicDialogRef | undefined;
   incomeList: any;
+
   constructor(private service:DataService,
               public dialogService: DialogService,
               public messageService: MessageService,
@@ -21,6 +22,9 @@ export class IncomeComponent implements OnInit{
               ) {
   }
   ngOnInit() {
+    this.getData();
+  }
+  getData(){
     this.service.getIncomes().subscribe({
         next: response => {
           this.incomeList = response.data;
@@ -31,7 +35,6 @@ export class IncomeComponent implements OnInit{
       }
     );
   }
-
   showAddComponent() {
     this.ref = this.dialogService.open(AddIncomeComponent, {
       header: 'Income',
@@ -43,7 +46,13 @@ export class IncomeComponent implements OnInit{
     this.ref.onMaximize.subscribe((value) => {
       this.messageService.add({ severity: 'info', key:"msg", summary: 'Maximized', detail: `maximized: ${value.maximized}` });
     });
+    this.ref.onClose.subscribe(() => {
+
+       this.getData();
+    });
+    this.service.ref = this.ref;
   }
+
 
   confirm2(id:number) {
     this.confirmationService.confirm({
@@ -51,8 +60,8 @@ export class IncomeComponent implements OnInit{
       header: 'Delete Confirmation',
       icon: 'pi pi-info-circle',
       accept: () => {
-        this.deleteRecords(id);
-        this.router.navigate(['/income'])
+        this.deleteRecord(id);
+        this.router.navigate(['/income']);
         this.messageService.add({ severity: 'info', key:'msg', summary: 'Confirmed', detail: 'Record deleted' });
       },
       reject: (type:ConfirmEventType) => {
@@ -69,14 +78,17 @@ export class IncomeComponent implements OnInit{
     });
   }
 
-  deleteRecords(id:number){
+  deleteRecord(id:number){
       this.service.deleteIncome(id).subscribe({
         next: (response) => {
+          this.getData();
         },
         error: (responseError) => {
           console.log(responseError);
         }
       })
-    }
+  }
+
+
 
 }
